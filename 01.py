@@ -1,5 +1,6 @@
 import queue
 import random
+import uuid
 from time import sleep
 
 q = queue.Queue()
@@ -9,10 +10,10 @@ counter = 0
 def generate_request():
     global counter
     counter += 1
-    id = random.random()
+    randomiser = random.random()
     message = str()
-    if id > 0.5:
-        message = f"Count: {counter}, Id: {str(id).lstrip('0.')}"
+    if randomiser > 0.5:
+        message = f"id: {counter}, payload: {uuid.uuid4()}"
         q.put(message)
     sleep(0.2)
 
