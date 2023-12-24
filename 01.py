@@ -3,13 +3,16 @@ import random
 from time import sleep
 
 q = queue.Queue()
+counter = 0
 
 
 def generate_request():
+    global counter
+    counter += 1
     id = random.random()
     message = str()
     if id > 0.5:
-        message = f"Id: {str(id).lstrip('0.')}"
+        message = f"Count: {counter}, Id: {str(id).lstrip('0.')}"
         q.put(message)
     sleep(0.2)
 
@@ -32,6 +35,7 @@ def __main__():
             process_request()
         except KeyboardInterrupt:
             break
+
 
 if __name__ == "__main__":
     __main__()
