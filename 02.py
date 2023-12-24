@@ -18,12 +18,15 @@ def is_palindrom(text: str) -> bool:
 def __main__():
     print("Press Ctrl+C to exit")
     while True:
-        print("Type your string>>>")
-        text = input()
-        if is_palindrom(text):
-            print(f'"{text}" is palindrome')
-        else:
-            print(f'"{text}" is not palindrome')
+        try:
+            print("Type your string>>>")
+            text = input()
+            if is_palindrom(text):
+                print(f'"{text}" is palindrome')
+            else:
+                print(f'"{text}" is not palindrome')
+        except KeyboardInterrupt:
+            break
 
 
 if __name__ == "__main__":

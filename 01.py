@@ -25,10 +25,13 @@ def process_request() -> str:
 
 
 def __main__():
+    print("Press Ctrl+C to exit")
     while True:
-        generate_request()
-        process_request()
-
+        try:
+            generate_request()
+            process_request()
+        except KeyboardInterrupt:
+            break
 
 if __name__ == "__main__":
     __main__()
