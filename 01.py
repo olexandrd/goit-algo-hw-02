@@ -9,7 +9,7 @@ def generate_request():
     id = random.random()
     message = str()
     if id > 0.5:
-        message = f"Id: {id}"
+        message = f"Id: {str(id).lstrip('0.')}"
         q.put(message)
     sleep(0.2)
 
